@@ -95,7 +95,11 @@ filter | no | array | | A array of conditions to filter the hooks to be listed
 # Get a Hook Information
 
 ```shell
-curl --request GET https://api.saturnus.io/v1/hook/ID
+curl --request GET https://api.saturnus.io/v1/hook/ID \
+-H `Content-Type: application/json` \
+-d `{
+        "key":"MY_KEY"
+    }`
 ```
 
 > Response
@@ -115,10 +119,20 @@ curl --request GET https://api.saturnus.io/v1/hook/ID
 }
 ```
 
+## Query Parameters
+
+Name | Required | Type | Default | Description
+---- | -------- | ---- | ------- | -----------
+key | yes | string | | The API key
+
 # Delete a Hook
 
 ```shell
-curl --request DELETE https://api.saturnus.io/v1/hook/ID
+curl --request DELETE https://api.saturnus.io/v1/hook/ID \
+-H `Content-Type: application/json` \
+-d `{
+        "key":"MY_KEY"
+    }`
 ```
 
 > Response
@@ -126,3 +140,9 @@ curl --request DELETE https://api.saturnus.io/v1/hook/ID
 ```json
 "OK"
 ```
+
+## Query Parameters
+
+Name | Required | Type | Default | Description
+---- | -------- | ---- | ------- | -----------
+key | yes | string | | The API key
